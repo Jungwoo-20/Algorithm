@@ -9,8 +9,6 @@ def find_key(mun, key, key_len):
         else:
             return True
     return False
-
-
 key = input()
 key_len = len(key)
 res = 0
