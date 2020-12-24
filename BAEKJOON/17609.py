@@ -7,7 +7,6 @@ def pseudo(mun, left, right):
             return 1
     return 0
 
-
 def palindrome(mun, left, right):
     while left < right:
         if mun[left] == mun[right]:
