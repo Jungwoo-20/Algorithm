@@ -1,4 +1,4 @@
-n = input().lo
+n = input().lower()
 a = len(n)
 for i in range(0, a, 10):
     e = i + 10
