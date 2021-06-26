@@ -2,7 +2,8 @@ import sys
 
 N = int(sys.stdin.readline())
 arr = list(map(int, sys.stdin.readline().split()))
-start, end = 0, N - 1
+arr.sort()
+start, end = 0, N-1
 _result = sys.maxsize
 while start < end:
     tmp = arr[start] + arr[end]
