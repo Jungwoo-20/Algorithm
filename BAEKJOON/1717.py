@@ -6,20 +6,18 @@ sys.setrecursionlimit(10 ** 9)
 def find(x):
     if parents[x] == x:
         return x
-    p = find(parents[x])
-    parents[x] = p
-    return p
+    parents[x] = find(parents[x])
+    return parents[x]
 
 
 def union(x, y):
-    if find(x) != find(y):
-        parents[find(y)] = x
+    x = find(x)
+    y = find(y)
 
-
-def find_parent(x):
-    if parents[x] == x:
-        return x
-    return find_parent(parents[x])
+    if x < y:
+        parents[y] = x
+    else:
+        parents[x] = y
 
 
 N, M = map(int, sys.stdin.readline().split())
@@ -30,7 +28,7 @@ for _ in range(M):
     if not a:
         union(b, c)
     if a:
-        if find_parent(b) == find_parent(c):
+        if find(b) == find(c):
             print('YES')
         else:
             print('NO')
