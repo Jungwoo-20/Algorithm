@@ -13,6 +13,8 @@ def bfs_heap(start, end, N, lst):
     heapq.heappush(queue, [start - 1, 0])
     while queue:
         point, weight = heapq.heappop(queue)
+        if weight > dist[point]:
+            continue
         for _point, _weight in lst[point]:
             _weight += weight
             if _weight < dist[_point]:
